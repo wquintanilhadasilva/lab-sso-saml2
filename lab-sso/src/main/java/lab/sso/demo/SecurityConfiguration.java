@@ -17,7 +17,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .oauth2ResourceServer(config -> config.jwt(issuer -> is));
+                .oauth2ResourceServer(config -> config.jwt(jwt -> jwt.jwtAuthenticationConverter(new JWTConverter())));
         return http.build();
     }
 
