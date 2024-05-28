@@ -17,6 +17,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf(AbstractHttpConfigurer::disable)
+                // .oauth2Login(Customizer.withDefaults()) Caso queira fazer o fluxo OAuth para redirecionar para a tela de login do IDP externo
                 .oauth2ResourceServer(config -> config.jwt(jwt -> jwt.jwtAuthenticationConverter(new JWTConverter())));
         return http.build();
     }
