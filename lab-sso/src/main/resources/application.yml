@@ -6,6 +6,14 @@ spring:
     name: lab-sso
   security:
     oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: adfasdes034179o3hap0il7ktrv6id7
+            client-secret: lP3VACDHji9UmgJr3gEf
+          # google:
+          #   client-id: 99999999999999999999999999999
+          #   client-secret: 99999999999999999999999999
       resourceserver:
         jwt:
           issuer-uri: http://localhost:7081/realms/lab-saml-sp
